@@ -42,6 +42,12 @@ class SubtitleRemover:
         self.hardware_accelerator = HardwareAccelerator.instance()
         # 是否使用硬件加速
         self.hardware_accelerator.set_enabled(config.hardwareAcceleration.value)
+        self.append_output(
+            f"[Hardware] accelerator={self.hardware_accelerator.accelerator_name}, "
+            f"cuda={self.hardware_accelerator.has_cuda()}, "
+            f"mps={self.hardware_accelerator.has_mps()}, "
+            f"onnx={', '.join(self.hardware_accelerator.onnx_providers) if self.hardware_accelerator.onnx_providers else 'CPUExecutionProvider'}"
+        )
         self.model_config = ModelConfig()
         # 判断是否为图片
         self.is_picture = is_image_file(str(vd_path))

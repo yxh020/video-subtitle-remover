@@ -71,6 +71,7 @@ class Config(QConfig):
     1. STTN_SKIP_DETECTION
     含义：是否使用跳过检测
     效果：设置为True跳过字幕检测，会省去很大时间，但是可能误伤无字幕的视频帧或者会导致去除的字幕漏了
+    效果：设置为True跳过字幕检测，会省去很大时间，但是可能误伤无字幕的视频帧或者会导致去除的字幕漏了
 
     2. STTN_NEIGHBOR_STRIDE
     含义：相邻帧数步长, 如果需要为第50帧填充缺失的区域，STTN_NEIGHBOR_STRIDE=5，那么算法会使用第45帧、第40帧等作为参照。
